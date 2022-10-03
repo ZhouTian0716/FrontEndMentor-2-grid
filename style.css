@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --darkGrayishBlue: hsl(217, 19%, 35%);
+  --darkBlackishBlue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --lightGray: hsl(0, 0%, 81%);
+  --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-size: 13px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 100px auto;
+  padding: 50px;
+  display: grid;
+  background-color: #edf2f8;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  grid-template-areas:
+    "a a b c"
+    "d e e c";
+  grid-template-columns: repeat(4, 1fr);
+
+  /* grid-template-rows: repeat(2, 1fr); */
+  gap: 15px;
+}
+.card {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
+.card-a {
+  grid-area: a;
+}
+.card-b {
+  grid-area: b;
+}
+.card-c {
+  grid-area: c;
+}
+.card-d {
+  grid-area: d;
+}
+.card-e {
+  grid-area: e;
+}
+
+.bg-purple {
+  background-color: var(--violet);
+  color: var(--white);
+}
+
+.bg-gray {
+  background-color: var(--darkGrayishBlue);
+  color: var(--white);
+}
+
+.bg-dark {
+  background-color: var(--darkBlackishBlue);
+  color: var(--white);
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.user {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border: 2px solid hsl(217, 19%, 35%);
+  border-radius: 50%;
+  margin-right: 15px;
+  align-self: center;
+}
+
+.user div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-name {
+  font-size: 15px;
+}
+
+.user-position {
+  opacity: 0.5;
+}
+
+.paragraph {
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-areas:
+      "a a b"
+      "c c c"
+      "d e e";
+    grid-template-columns: repeat(3, 1fr);
+
+    /* grid-template-rows: repeat(3, 1fr); */
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e";
+    grid-template-columns: 1fr;
+  }
+}
